@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق SSO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="app-title">تطبيق SSO</h1>
+
+        <!-- اختيار اللغة -->
+        <div id="language-select">
+            <button onclick="changeLanguage('ar')">عربي</button>
+            <button onclick="changeLanguage('en')">English</button>
+        </div>
+
+        <p id="description">اختر لغتك وابدأ بإضافة صور لملابسك.</p>
+        
+        <!-- قسم لرفع الصور -->
+        <input type="file" id="upload" accept="image/*" multiple>
+        
+        <!-- عداد الصور المتبقية -->
+        <p id="remainingImages">بقي لرفع 10 صور</p>
+
+        <div id="imagePreview" class="image-preview">
+            <p id="no-images-msg">لم تقم برفع أي صورة بعد!</p>
+        </div>
+
+        <!-- عرض خيارات الستايل -->
+        <div id="styleSuggestions" class="style-suggestions">
+            <p id="style-text">اختر الستايل المفضل:</p>
+            <button class="style-button" onclick="suggestStyle('Old Money')">Old Money</button>
+            <button class="style-button" onclick="suggestStyle('Star Boy')">Star Boy</button>
+            <button class="style-button" onclick="suggestStyle('Stockholm')">Stockholm</button>
+        </div>
+
+        <!-- عرض الخزانة وحفظها -->
+        <div id="savedWardrobe">
+            <button onclick="saveWardrobe()">حفظ الخزانة</button>
+            <div id="wardrobeDisplay" class="wardrobe-display">
+                <h3>خزانتي</h3>
+                <div id="wardrobeImages"></div>
+            </div>
+        </div>
+
+        <div id="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
